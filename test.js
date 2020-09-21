@@ -1,13 +1,7 @@
-let startdate = new Date("2019-09-18")
-let now = new Date();
-let sutki = 86400000;
-//alert(now);
-let weekday = now.getDay();
-
-let day;
+//////   Config   //////
 
 let students = [
-  "Космос и Белашев", // 0
+  "Космос и Белашев",
   "Бондаревский и Винтулин",
   "Глазков и Годованцев",
   "Гридин и Джувеликян",
@@ -19,49 +13,19 @@ let students = [
   "Манда и Попов",
   "Раимов и Ржавин",
   "Середа и Ситников",
-  "Слепухина и Яровой", // 12
+  "Слепухина и Яровой",
 ];
 
-switch(weekday) {
-  case 0:
-    day = "Воскресенье";
-    break;
+//////   Programm   //////
 
-    case 1:
-      day = "Понедельник";
-      break;
-
-      case 2:
-        day = "Вторник";
-        break;
-
-        case 3:
-          day = "Среда";
-          break;
-
-          case 4:
-            day = "Четверг";
-            break;
-
-            case 5:
-              day = "Пятница";
-              break;
-
-              case 6:
-                day = "Суббота";
-                break;
-
-  default:
-    alert("Ты лох конченый!!");
-    break;
-}
-
+let startdate = new Date("2019-09-18")
+let now = new Date();
+let sutki = 86400000;
+let weekday = now.getDay();
+let day;
 let dezhurniy = 1;
-
 let vivod;
-
 let dayspass;
-
 let vihday = 0;
 
 function dezhur()
@@ -86,10 +50,10 @@ for (let i = 1; i <= dayspass; i++)
     {
       dezhurniy += (dayspass - vihday);
 
-      if (dezhurniy > 12)
+      if (dezhurniy > students.length)
       {
-        let a = Math.trunc(dezhurniy / 12);
-        dezhurniy -= a * 12;
+        let a = Math.trunc(dezhurniy / students.length);
+        dezhurniy -= a * students.length;
       }
     }
   }
@@ -102,13 +66,6 @@ for (let i = 1; i <= dayspass; i++)
   return dezhurniy;
   return dayspass;
 
-  //alert(now - startdate);
-//  alert(now + sutki);
-//  alert(vivod);
-
-//alert(now);
-//alert(Math.trunc((now - startdate) / sutki));
-//alert(students[dezhurniy]);
 }
 
 dezhur();
